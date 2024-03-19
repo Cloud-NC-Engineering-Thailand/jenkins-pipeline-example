@@ -6,7 +6,7 @@
 - [License](#license) -->
 
 ## Part 1: ใน Kubernetes Cluster
-### 1.สร้าง secret สำหรับ authen docker registry ใน kubernetes cluster
+### 1.1 สร้าง secret สำหรับ authen docker registry ใน kubernetes cluster
 
 แทนค่า username, password และ email ด้วยข้อมูลจริง และรันคำสั่งข้างล่าง
 ```bash
@@ -15,8 +15,8 @@ kubectl create secret docker-registry docker-credentials \
     --docker-password=<password> \
     --docker-email=<email>
 ```
-## Part 2: ใน Repository ที่จะเก็บ Jenkinsfile, Dockerfile และ yaml file สำหรับการสร้าง Deployment
-### 1. สร้างไฟล์ kaniko-builder.yaml 
+## Part 2: ส่วนของ Repository ที่จะเก็บ Jenkinsfile, Dockerfile และ yaml file สำหรับการสร้าง Deployment
+### 2.1 สร้างไฟล์ kaniko-builder.yaml 
 kaniko-builder.yaml
 ```yaml
 kind: Pod
@@ -49,7 +49,7 @@ spec:
             - key: .dockerconfigjson
               path: config.json
 ```
-### 2. สร้างไฟล์ kaniko-agent.yaml
+### 2.2 สร้างไฟล์ kaniko-agent.yaml
 kaniko-agent.yaml
 ```yaml
 apiVersion: v1
@@ -77,7 +77,7 @@ spec:
         cpu: "512m"
   restartPolicy: Never
 ```
-### 3. สร้าง Jenkinsfile 
+### 2.3 สร้าง Jenkinsfile 
 Jenkinsfile
 
 ```yaml
@@ -146,11 +146,11 @@ pipeline {
 
 ## Part 3: การสร้าง pipeline ใน Jenkins 
 
-### 1. สร้าง pipeline config pipeline เบื้องต้นได้ตามตัวอย่างข้อมูลข้างล่าง
+### 3.1 สร้าง pipeline config pipeline เบื้องต้นได้ตามตัวอย่างข้อมูลข้างล่าง
 ![pipeline1](images/pipeline1.png)
 ![pipeline2](images/pipeline2.png)
 
-### 2. Save และ  Build now
+### 3.2 Save และ  Build now
 
 
 
