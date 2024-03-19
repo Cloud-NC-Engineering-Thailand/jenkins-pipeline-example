@@ -1,4 +1,4 @@
-# ตัวอย่างการใช้ Kaniko build&push docker image  และใช้คำสั่ง kubectl ใน Jenkins pipeline
+# ตัวอย่างการใช้ Kaniko build & push docker image  และใช้คำสั่ง kubectl ใน Jenkins pipeline
 <!-- ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
