@@ -146,7 +146,7 @@ pipeline {
 
 ## Part 3: การสร้าง pipeline ใน Jenkins 
 
-### 3.1 สร้าง pipeline config pipeline เบื้องต้นได้ตามตัวอย่างข้อมูลข้างล่าง
+### 3.1 สร้าง pipeline โดยการ config เบื้องต้นได้ตามตัวอย่างข้อมูลข้างล่าง
 ![pipeline1](images/pipeline1.png)
 ![pipeline2](images/pipeline2.png)
 
