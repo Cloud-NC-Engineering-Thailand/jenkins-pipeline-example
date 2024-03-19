@@ -49,8 +49,8 @@ spec:
             - key: .dockerconfigjson
               path: config.json
 ```
-### 2.2 สร้างไฟล์ kaniko-agent.yaml
-kaniko-agent.yaml
+### 2.2 สร้างไฟล์ kubectl-agent.yaml
+kubectl-agent.yaml
 ```yaml
 apiVersion: v1
 kind: Pod
