@@ -77,9 +77,23 @@ spec:
         cpu: "512m"
   restartPolicy: Never
 ```
-### 2.3 สร้าง Jenkinsfile 
+### 2.3 สร้าง Clusterrolebinding ใน kubecluster เพื่อให้สามารถใช้คำสั่ง kubectl ได้
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: fabric8-rbac
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: cicd
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+```
+### 2.4 สร้าง Jenkinsfile 
 Jenkinsfile
-
 ```yaml
 pipeline {
   agent any
